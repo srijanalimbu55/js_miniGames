@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event</title>
+</head>
+<body>
+    <canvas id="canvas" 
+    style="background-color: #c8b6ff;"
+    width="400"
+    height="500">
+</canvas>
+    <script>
+        const canvas = document.getElementById("canvas");
+        const context= canvas.getContext("2d");
+
+        
+        canvas.addEventListener("mousemove", (e) => {
+            console.log(event.clientX, event.clientY);
+
+            context.clearRect(0,0,400,500);
+            //clear screen
+            
+            context.beginPath();
+            context.fillStyle="#d90429";
+            context.arc(event.clientX,event.clientY,35,0,360);
+            context.fill();
+
+            context.beginPath();
+            context.fillStyle="#fefae0";
+            context.arc(event.clientX,event.clientY,25,0,360);
+            context.fill();
+
+            context.beginPath();
+            context.fillStyle="#bc6c25";
+            context.arc(event.clientX,event.clientY,15,0,360);
+            context.fill();
+    });
+    document.addEventListener("keydown",(event)=>{
+        if(event.code == "ArrowUp"){
+        console.log("hello");
+        }
+    });
+    </script>
+</body>
+</html>
