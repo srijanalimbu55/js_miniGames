@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+</head>
+<body>
+    <canvas style="background-color: #f0ebd8;"
+    id="canvas"
+    width="600px"
+    height="600px"></canvas>
+
+    <script>
+        const canvas= document.getElementById("canvas");
+        const c= canvas.getContext("2d");
+
+        
+        let y = 0;
+
+        function renderBox(){
+            c.beginPath();
+            c.fillStyle = "#1d2d44";
+            c.arc(0, y, 20, 0, 2 * Math.PI);  
+            c.fill();
+            
+            c.beginPath();
+            c.fillStyle = "#1d2d44";
+            c.arc(100, y, 20, 0, 2 * Math.PI);  
+            c.fill();
+
+            c.beginPath();
+            c.fillStyle = "#1d2d44";
+            c.arc(200, y, 20, 0, 2 * Math.PI);  
+            c.fill();
+
+            c.beginPath();
+            c.fillStyle = "#1d2d44";
+            c.arc(300, y, 20, 0, 2 * Math.PI);  
+            c.fill();
+
+            c.beginPath();
+            c.fillStyle = "#1d2d44";
+            c.arc(400, y, 20, 0, 2 * Math.PI);  
+            c.fill();
+
+            c.beginPath();
+            c.fillStyle = "#1d2d44";
+            c.arc(500, y, 20, 0, 2 * Math.PI);  
+            c.fill();
+
+            c.beginPath();
+            c.fillStyle = "#1d2d44";
+            c.arc(600, y, 20, 0, 2 * Math.PI);  
+            c.fill();
+
+
+
+            y += 1;
+        }
+        function update(){
+
+            c.clearRect(0, 0, 600, 600);//clear screen
+
+            renderBox();
+            window.requestAnimationFrame(update);
+        }
+
+        canvas.addEventListener("mousemove", (e) =>{
+            console.log(event.clientY);
+            update();
+            
+        });
+
+        
+    </script>
+    
+</body>
+</html>
